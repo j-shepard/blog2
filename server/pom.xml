@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    
+    <properties>
+        <java.version>21</java.version> <!-- Set your Java version here -->
+        <spring-boot.version>3.2.3</spring-boot.version> <!-- Set your Spring Boot version here -->
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version> <!-- Use Spring Boot version defined in properties -->
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+            <version>${spring-boot.version}</version> <!-- Use Spring Boot version defined in properties -->
+        <!-- Disabled as of Spring Boot 2.5.0, check https://github.com/spring-projects/spring-boot/issues/19483 for more info -->
+            <dependency>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-core</artifactId>
+                <version>9.5.0</version> <!-- Set Flyway version here -->
+            </dependency>
+        </dependencies>
+    </dependency>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version> <!-- Use Spring Boot version defined in properties -->
+                <configuration>
+                    <javaVersion>${java.version}</javaVersion> <!-- Use Java version defined in properties -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
